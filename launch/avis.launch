@@ -1,5 +1,6 @@
 <launch>
-    <node pkg="avis" type="<python_file_name>" name="<node_name>" />
-    <node pkg="avis" type="<name>" name="<node_name>" output="screen" />
+    <node pkg="avis" type="simulator.py" name="simulator" />
+    <node pkg="avis" type="vision.py" name="vision" />
+    <node pkg="avis" type="controller" name="controller"  />
 
 </launch>

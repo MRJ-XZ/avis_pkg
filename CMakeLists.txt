@@ -122,9 +122,8 @@ include_directories(
  include
   ${catkin_INCLUDE_DIRS}
 )
-#add_executable(<name> 
-#scripts/<cpp_file_name>.cpp)
-#target_link_libraries(<name> ${catkin_LIBRARIES})
+add_executable(controller scripts/controller.cpp)
+target_link_libraries(controller ${catkin_LIBRARIES})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -201,9 +200,10 @@ include_directories(
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
-#catkin_install_python(PROGRAMS
-#scripts/<pyhton_file_name>.py
-#DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-#)
+catkin_install_python(PROGRAMS
+scripts/simulator.py
+scripts/vision.py
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
