@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="avis" type="<python_file_name>" name="<node_name>" />
+    <node pkg="avis" type="<name>" name="<node_name>" output="screen" />
+
+</launch>
