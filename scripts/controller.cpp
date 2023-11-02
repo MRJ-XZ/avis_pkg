@@ -14,14 +14,13 @@ int main(int argc, char **argv)
   NodeHandle n;
   Publisher speed_pub = n.advertise<std_msgs::Int16>("speed", 10);
   Publisher steering_pub = n.advertise<std_msgs::Int16>("steering", 10);
-  Subscriber sensor_sub = n.subscribe("sensors", 1000, sensorsCallback);
-  Subscriber carspeed_sub = n.subscribe("carSpeed", 10, carSpeedCallback);
-  Subscriber center_sub = n.subscribe("center", 10, diCallback);
-  Subscriber angle_sub = n.subscribe("turn", 10, angleCallback);
+  Subscriber sensor_sub = n.subscribe("sensors", 1000, sensors_callback);
+  Subscriber carspeed_sub = n.subscribe("carSpeed", 10, carSpeed_callback);
+  Subscriber center_sub = n.subscribe("center", 10, distance_callback);
+  Subscriber angle_sub = n.subscribe("turn", 10, angle_callback);
   std_msgs::Int16 speed;
   std_msgs::Int16 steering;
   Rate loop_rate(30);
-  Sensor sensor(1000 , 50);
 	
   while(ok()){
   
@@ -38,7 +37,7 @@ void distance_callback(const std_msgs::Int16& msg){
     msg.data;
 }
 void sensors_callback(const std_msgs::Int16MultiArray& msg){
-    msg.data[i];
+
 }
 void carSpeed_callback(const std_msgs::Int16& msg){
     msg.data;
